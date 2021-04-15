@@ -21,6 +21,7 @@ set signcolumn=yes
 set encoding=UTF-8
 set list
 set listchars=tab:>-
+set colorcolumn=80
 
 let mapleader = "\<space>"
 
@@ -54,6 +55,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'stsewd/fzf-checkout.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 let g:fzf_layout = { 'window': { 'width':0.8, 'height': 0.8 } }
