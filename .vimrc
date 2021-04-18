@@ -29,6 +29,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 nmap <C-n> :NERDTreeToggle<CR>
+packloadall
 
 nmap <leader>gs :G<CR>
 nmap <leader>gh :diffget //3<CR>
@@ -56,7 +57,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 call plug#end()
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 let g:fzf_layout = { 'window': { 'width':0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
