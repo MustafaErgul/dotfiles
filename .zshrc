@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+eval "$(/Users/mustafa/TravisCIrepos/trvs/bin/trvs init -)"
 eval "$(rbenv init -)"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/mustafa/.oh-my-zsh"
@@ -71,7 +72,7 @@ CASE_SENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git rails ruby rbenv)
+plugins=(git rails ruby rbenv kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,6 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"i
+
+export TMUX_CONFIG="~/.tmux.conf"
+
+# TMUX aliases
+alias tn="tmux -u -f $TMUX_CONFIG new"
+alias ta="tmux -u -f $TMUX_CONFIG attach"
+alias tt="nvim $TMUX_CONFIG"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
