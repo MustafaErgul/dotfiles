@@ -22,6 +22,7 @@ set encoding=UTF-8
 set list
 set listchars=tab:>-
 set colorcolumn=80
+nmap <leader>gs :Gstatus<CR><C-w>5-
 
 let mapleader = "\<space>"
 
