@@ -60,6 +60,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 let g:prettier#autoformat = 0
@@ -72,7 +73,7 @@ nnoremap <leader>gc :GCheckout<CR>
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_theme='simple'
+let g:airline_theme='gruvbox'
 
 colorscheme gruvbox
 set background=dark
