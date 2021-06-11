@@ -1,6 +1,6 @@
 # dotfiles
 
-Dotfiles I use for my personal configuration; Vim, Zsh and more! :)
+Dotfiles I use for my personal configuration; Vim, Zsh and many more! :)
 
 # Installation
 
