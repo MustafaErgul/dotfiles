@@ -3,6 +3,7 @@ syntax on
 set laststatus=2
 set noerrorbells
 set guicursor=
+set guifont=UbuntuMono_Nerd_Font:18
 set relativenumber
 set nu
 set tabstop=4 softtabstop=4
@@ -30,6 +31,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 nmap <C-n> :NERDTreeToggle<CR>
+let g:DevIconsEnableFoldersOpenClose = 1
 packloadall
 
 nmap <leader>gs :G<CR>
