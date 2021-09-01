@@ -118,6 +118,7 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
+
 # kubectl autocomplete
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 

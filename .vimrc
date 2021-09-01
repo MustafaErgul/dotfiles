@@ -23,6 +23,8 @@ set encoding=UTF-8
 set list
 set listchars=tab:>-
 set colorcolumn=80
+let NERDTreeShowHidden=1
+
 nmap <leader>gs :Gstatus<CR><C-w>5-
 
 let mapleader = "\<space>"
@@ -40,6 +42,10 @@ nmap <leader>gu :diffget //2<CR>
 
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
+
+"Keep the line scroll in the middle
+nnoremap j jzzzv
+nnoremap k kzzzv
 
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
@@ -61,12 +67,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'html'] }
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.html PrettierAsync
 
 let g:fzf_layout = { 'window': { 'width':0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
