@@ -5,6 +5,7 @@ eval "$(rbenv init -)"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/mustafa/.oh-my-zsh"
 export PATH="$PATH:/opt/yarn-[version]/bin"
+export PATH="$PATH:/Users/mustafa/nvim-osx64/bin"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -118,10 +119,15 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-
 # kubectl autocomplete
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # default vim command to nvim command
 alias vim="nvim"
 alias vi="nvim"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mustafa/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mustafa/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mustafa/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mustafa/google-cloud-sdk/completion.zsh.inc'; fi
