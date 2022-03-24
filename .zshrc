@@ -103,6 +103,11 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"i
 
+# Virtualenv for Python
+export WORKON_HOME=$HOME/.venv
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
 export TMUX_CONFIG="~/.tmux.conf"
 
 # TMUX aliases
