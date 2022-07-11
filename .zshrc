@@ -1,11 +1,16 @@
-# If you come from bash you might have to change your $PATH.
+# Put installed packages in requirements If you come from bash you might have
+# to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 eval "$(/Users/mustafa/TravisCIrepos/trvs/bin/trvs init -)"
 eval "$(rbenv init -)"
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/mustafa/.oh-my-zsh"
 export PATH="$PATH:/opt/yarn-[version]/bin"
 export PATH="$PATH:/Users/mustafa/nvim-osx64/bin"
+
+# Add the bin folder to $PATH before the plugins load
+PATH=$HOME/.local/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -103,11 +108,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"i
 
-# Virtualenv for Python
-export WORKON_HOME=$HOME/.venv
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
-
 export TMUX_CONFIG="~/.tmux.conf"
 
 # TMUX aliases
@@ -136,3 +136,8 @@ if [ -f '/Users/mustafa/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mustafa
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mustafa/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mustafa/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Pyenv config
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
