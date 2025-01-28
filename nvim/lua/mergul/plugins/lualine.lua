@@ -6,13 +6,14 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				icons_enabled = false,
+				icons_enabled = true,
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
-					statusline = { "NvimTree" },
+					statusline = { "NvimTree", "neo-tree" },
 				},
 				always_divide_middle = true,
+				theme = "catppuccin",
 			},
 			sections = {
 				lualine_a = { "mode" },
@@ -20,7 +21,7 @@ return {
 				lualine_c = {
 					"'%='",
 					{
-						icons_enabled = false,
+						icons_enabled = true,
 						"filename",
 						file_status = true, -- displays file status (readonly status, modified status)
 						path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
@@ -40,7 +41,7 @@ return {
 				lualine_z = {},
 			},
 			tabline = {},
-			extensions = {},
+			extensions = { "neo-tree" },
 		})
 	end,
 }

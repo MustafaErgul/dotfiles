@@ -3,6 +3,7 @@ return {
 	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope-live-grep-args.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
 		"folke/todo-comments.nvim",
@@ -31,12 +32,14 @@ return {
 						["<C-j>"] = actions.move_selection_next, -- move to next result
 						["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
 						["<C-t>"] = trouble_telescope.open,
+						-- ["<C-l>"] = actions.preview_scrolling_left,
 					},
 				},
 			},
 		})
 
 		telescope.load_extension("fzf")
+		telescope.load_extension("live_grep_args")
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness

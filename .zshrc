@@ -1,19 +1,21 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
 eval "$(rbenv init -)"
 
 # Add volta to $PATH
 export VOLTA_HOME=$HOME/.volta
+export VOLTA_FEATURE_PNPM=1
 export PATH=$HOME/.volta/bin:$PATH
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:/Users/mergul/nvim-osx64/bin"
 
-ZSH_THEME="awesomepanda" # set by `omz`
+# ZSH_THEME="awesomepanda" # set by `omz`
+source ~/.oh-my-zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 # Add the bin folder to $PATH before the plugins load
 PATH=$HOME/.local/bin:$PATH
@@ -37,6 +39,7 @@ fi
 # Example aliases
 alias zshconfig="vi ~/.zshrc"
 alias ohmyzsh="vi ~/.oh-my-zsh"
+alias lg="lazygit"
 
 # Export TMUX config file
 export TMUX_CONFIG="~/.config/tmux/.tmux/.tmux.conf"
@@ -72,4 +75,12 @@ deduplicate_path
 # this is needed for the zsh-syntax-highlighting
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# pure prompter
+# zstyle :prompt:pure:path color '#FF0000'
+zstyle :prompt:pure:execution_time show no
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
+
+# autin setup
 eval "$(atuin init zsh)"

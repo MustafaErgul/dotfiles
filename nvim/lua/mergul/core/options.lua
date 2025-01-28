@@ -1,7 +1,10 @@
 --vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd("let g:loaded_ruby_provider = 0")
+
+-- to make Ruby work on multiple versions in diff projects
+vim.fn.setenv("PATH", vim.fn.expand("/opt/homebrew/opt/ruby/bin:$PATH"))
 
 local opt = vim.opt
-
 opt.swapfile = false
 opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -15,6 +18,9 @@ vim.cmd("set nocompatible")
 -- Set language this is must for yanking in UTF format
 vim.cmd("language en_US.UTF-8")
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+--
 -- Set terminal color support to 256 colors
 -- vim.opt.t_Co = 256
 
@@ -58,9 +64,6 @@ vim.opt.copyindent = true
 -- Set diff options for vertical splits
 vim.opt.diffopt:append("vertical")
 
--- Highlight column 80
-vim.opt.colorcolumn = "80"
-
 -- Show sign column
 vim.opt.signcolumn = "yes"
 
@@ -83,11 +86,3 @@ function _G.Rawecho(str)
 		f:close()
 	end
 end
-
--- Define the OpenMarkdownPreview function
--- function OpenMarkdownPreview(url)
--- 	vim.fn.jobstart({ "firefox", "--new-window", url }, { detach = true })
--- end
---
--- -- Set the mkdp_browserfunc global variable to use the OpenMarkdownPreview function
--- vim.g.mkdp_browserfunc = "v:lua.OpenMarkdownPreview"

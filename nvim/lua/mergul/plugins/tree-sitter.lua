@@ -32,7 +32,6 @@ return {
 				"lua",
 				"vim",
 				"vimdoc",
-				"kdl",
 				"query",
 				"html",
 				"json",
